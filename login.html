@@ -1,0 +1,340 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+    <!--<![endif]-->
+    <!-- BEGIN HEAD -->
+
+    
+<head>
+        <meta charset="utf-8" />
+        <title>Login</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <!-- BEGIN GLOBAL MANDATORY STYLES -->
+        <link href="assets/global/css/fonts.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+        <!-- END GLOBAL MANDATORY STYLES -->
+        <!-- BEGIN PAGE LEVEL PLUGINS -->
+        <link href="assets/global/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css" rel="stylesheet" type="text/css" />
+        <!-- END PAGE LEVEL PLUGINS -->
+        <!-- BEGIN THEME GLOBAL STYLES -->
+        <link href="assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
+        <link href="assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
+        <!-- END THEME GLOBAL STYLES -->
+        <!-- BEGIN PAGE LEVEL STYLES -->
+        <link href="assets/pages/css/login.min.css" rel="stylesheet" type="text/css" />
+        <!-- END PAGE LEVEL STYLES -->
+        <!-- BEGIN THEME LAYOUT STYLES -->
+        <link href="assets/layouts/layout/css/layout.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/layouts/layout/css/themes/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
+        <link href="assets/layouts/layout/css/custom.min.css" rel="stylesheet" type="text/css" />
+        <!-- END THEME LAYOUT STYLES -->
+        <link rel="shortcut icon" href="images/32fav.png" /> </head>
+
+    <!-- END HEAD -->
+	
+	
+	
+
+    <body class= "login" style = "background-image: url("images/bg.jpg");" >
+        <!-- BEGIN LOGO -->
+		<div class = "logo">
+			<img src = "images/kkkkk.png"  height = "60px"; width = "400px" alt = "Colosso Web Logo">
+		</div>
+        <!-- END LOGO -->
+        <!-- BEGIN LOGIN -->
+        <div class="content" 
+		style = "box-shadow: rgba(0, 0, 0, 2.6) 0px 3px 8px;">
+            <!-- BEGIN LOGIN FORM -->
+
+
+			<h1 style = "text-align: center; font-weight: light; font-size: 42px;">
+				<span style = "color: rgb(0, 115, 207); font-weight: bold; font-size: 62px;"
+				><\7/></span>
+				<br>Tecnologia
+			</h1>
+			
+            <div class="login-form display-hide" style = "margin-top: 80px;" id="divLoad">
+                <div class="form-group" align="center">
+                    <img src="images/gifCarregando5.gif" width="140" height="140" />
+                </div>
+            </div>
+            <div class="login-form display-show" style = "margin-top: 60px;" id="divEmail">
+                <h3 class="form-title font-green pull-left" style = "font-size: 20px;"
+				>Digite o seu e-mail</h3>
+                <div class="form-group">
+                    <label class="control-label visible-ie8 visible-ie9"><b>E-Mail</b></label>
+                    <input class="form-control form-control-solid placeholder-no-fix" type="text" autocomplete="off" placeholder="e-mail" name="email" id="email" /> 
+                </div>
+				<h2 style = "position: fixed; padding-top: 10px;" > </h2>
+                <div class="form-actions">
+                    <button type="button" id="btnVerEmail" class="btn blue pull-right" onclick="verificarEmail();">Pr&oacute;ximo</button>
+                </div>
+            </div>
+
+            <div class="login-form display-hide" style = "margin-top: 80px;" id="divSenha">
+                <h4 class="font-blue" id="nomeUsr"></h4><hr />
+                <h4 class="font-blue" id="nomeEmpresa"></h4><hr />
+                <h3 class="form-title font-green pull-left"style = "font-size: 20px;"
+				>Digite a sua senha</h3>
+                <div class="form-group">
+                    <label class="control-label visible-ie8 visible-ie9"><b>Senha</b></label>
+                    <input class="form-control form-control-solid placeholder-no-fix" type="password" autocomplete="off" maxlength="50" placeholder="senha" name="senha" id="senha" /> 
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" id="btnVerSenha" class="btn blue pull-right" onclick="verificarSenha();">Acessar</button>
+                </div>
+            </div>
+
+
+
+            <input type="hidden" name="retIdEmpresa" id="retIdEmpresa" value="" />
+            <input type="hidden" name="retEmpresa" id="retEmpresa" value="" />
+            <input type="hidden" name="retNome" id="retNome" value="" />
+            <input type="hidden" name="retEmail" id="retEmail" value="" />
+            <input type="hidden" name="retURL" id="retURL" value="" />
+            <input type="hidden" name="retPorta" id="retPorta" value="" />
+            <input type="hidden" name="retUsr" id="retUsr" value="" />
+            <input type="hidden" name="retPwd" id="retPwd" value="" />
+            <input type="hidden" name="retSupervisor" id="retSupervisor" value="" />
+            <input type="hidden" name="retWS2" id="retWS2" value="" />
+
+            <!-- END LOGIN FORM -->
+        </div>
+		
+        <!-- <div class="copyright"> Sete Tecnologia - Colosso Web </div> -->
+        <!--[if lt IE 9]>
+<script src="assets/global/plugins/respond.min.js"></script>
+<script src="assets/global/plugins/excanvas.min.js"></script> 
+<![endif]-->
+    <!-- PLUGINS FIXOS -->
+        <!-- BEGIN CORE PLUGINS -->
+        <script src="assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+        <!-- END CORE PLUGINS -->
+        <!-- BEGIN PAGE LEVEL PLUGINS -->
+        <script src="assets/global/plugins/jquery-inputmask/jquery.inputmask.bundle.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/jquery.input-ip-address-control-1.0.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/jquery-validation/js/jquery.validate.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/jquery-validation/js/additional-methods.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/select2/js/select2.full.min.js" type="text/javascript"></script>
+        
+        <script src="assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/bootstrap-wysihtml5/wysihtml5-0.3.0.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/ckeditor/ckeditor.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/bootstrap-markdown/lib/markdown.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/bootstrap-markdown/js/bootstrap-markdown.js" type="text/javascript"></script>
+
+        <!-- END PAGE LEVEL PLUGINS -->
+        <!-- BEGIN THEME GLOBAL SCRIPTS -->
+        <script src="assets/global/scripts/app.min.js" type="text/javascript"></script>
+        <!-- END THEME GLOBAL SCRIPTS -->
+        <!-- BEGIN PAGE LEVEL SCRIPTS -->
+        <script src="assets/pages/scripts/form-input-mask.min.js" type="text/javascript"></script>
+        <script src="assets/pages/scripts/login.min.js" type="text/javascript"></script>
+        <script src="assets/pages/scripts/form-validation.min.js" type="text/javascript"></script>
+        <!-- END PAGE LEVEL SCRIPTS -->
+        <!-- BEGIN THEME LAYOUT SCRIPTS -->
+        <script src="assets/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>
+        <script src="assets/layouts/layout/scripts/demo.min.js" type="text/javascript"></script>
+        <script src="assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
+        <!-- END THEME LAYOUT SCRIPTS -->
+    <!-- END PLUGINS FIXOS -->
+        <script type="text/javascript">
+
+
+            $('#email').on('keypress', function(event){
+                var char = event.which || event.keyCode;
+                if(char == 39 || char == 34 || char == 35 || char == 32) { 
+                   event.preventDefault();
+                   if(event.shiftKey){
+                       return false;
+                   }
+                   return false;
+                }
+                if (char == 13) {
+                    verificarEmail();
+                    return false;
+                }
+            });
+
+            $('#senha').on('keypress', function(event){
+                var char = event.which || event.keyCode;
+                if (char == 13) {
+                    verificarSenha();
+                    return false;
+                }
+            });
+
+
+            function verificarEmail() {
+                var email = document.getElementById("email").value;
+                var ret = "OK";
+                if (email.length == 0) {
+                    ret = " Informe seu Email. ";
+                    alert(ret);
+                    return;
+                }
+                if (ret == 'OK') {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function() {
+                        if (this.readyState < 4) {
+                            //document.getElementById("divLoad").setAttribute("class","login-form display-show");
+                            document.getElementById("btnVerEmail").setAttribute("disabled", "disabled");
+                            document.getElementById("btnVerEmail").innerHTML = '<i class="fa fa-spin fa-circle-o-notch"></i> Aguarde...';
+                            document.getElementById("email").setAttribute("disabled", "disabled");
+                            //<button type="button" id="btnVerEmail" class="btn yellow pull-right" onclick="verificarEmail();">Pr&oacute;ximo</button>
+                            //document.getElementById("divEmail").setAttribute("class","login-form display-hide");
+                            //document.getElementById("divSenha").setAttribute("class","login-form display-hide");
+                        } else {
+                            if (this.readyState == 4 && this.status == 200) {
+								obj = JSON.parse(this.responseText);
+								
+								
+                                if (obj.items[0].MSG == 'OK') {
+                                    document.getElementById("retIdEmpresa").value = obj.items[0].IDEMPRESA;
+                                    document.getElementById("retEmpresa").value = obj.items[0].EMPRESA;
+                                    document.getElementById("retEmail").value = obj.items[0].EMAIL;
+                                    document.getElementById("retNome").value = obj.items[0].NOME;
+                                    document.getElementById("retURL").value = obj.items[0].URL;
+                                    document.getElementById("retPorta").value = obj.items[0].PORTA;
+                                    document.getElementById("retUsr").value = obj.items[0].USR;
+                                    document.getElementById("retPwd").value = obj.items[0].PWD;
+                                    document.getElementById("retSupervisor").value = obj.items[0].SUPERVISOR;
+                                    document.getElementById("retWS2").value = obj.items[0].WS2;
+
+                                    document.getElementById("nomeUsr").innerHTML = 'Usuário: <b>'+obj.items[0].NOME+'</b>';
+                                    document.getElementById("nomeEmpresa").innerHTML = 'Empresa: <b>'+obj.items[0].EMPRESA+'</b>';
+                                    document.getElementById("divLoad").setAttribute("class","login-form display-hide");
+                                    document.getElementById("divEmail").setAttribute("class","login-form display-hide");
+                                    document.getElementById("divSenha").setAttribute("class","login-form display-show");
+                                    document.getElementById("senha").focus();
+                                } else {
+                                    alert(obj.items[0].MSG);
+                                    //document.getElementById("divLoad").setAttribute("class","login-form display-hide");
+                                    //document.getElementById("divEmail").setAttribute("class","login-form display-show");
+                                    //document.getElementById("divSenha").setAttribute("class","login-form display-hide");
+                                    document.getElementById("btnVerEmail").removeAttribute("disabled");
+                                    document.getElementById("btnVerEmail").innerHTML = 'PrÃ³ximo';
+                                    document.getElementById("email").removeAttribute("disabled");
+                                }
+                            }
+                        }
+                    };
+                    var sql = "begin obter_dados_email('"+email+"', :p_cursor); end;";
+                    xhttp.open("GET.html", "/sql?usuario=SUPERVISOR&senha=SUPERV&sql="+sql, true);
+                    xhttp.send();
+                }
+            }
+
+            function verificarSenha() {
+                var idempresa = document.getElementById("retIdEmpresa").value;
+                var empresa = document.getElementById("retEmpresa").value;
+                var email = document.getElementById("retEmail").value;
+                var nome = document.getElementById("retNome").value;
+                var url = document.getElementById("retURL").value;
+                var porta = document.getElementById("retPorta").value;
+                var usr = document.getElementById("retUsr").value;
+                var pwd = document.getElementById("retPwd").value;
+                var senha = document.getElementById("senha").value;
+                var supervisor = document.getElementById("retSupervisor").value;
+                var ws2 = document.getElementById("retWS2").value;
+
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState < 4) {
+                        //document.getElementById("divLoad").setAttribute("class","login-form display-show");
+                        document.getElementById("divEmail").setAttribute("class","login-form display-hide");
+                        //document.getElementById("divSenha").setAttribute("class","login-form display-hide");
+                        document.getElementById("btnVerSenha").setAttribute("disabled", "disabled");
+                        document.getElementById("btnVerSenha").innerHTML = '<i class="fa fa-spin fa-circle-o-notch"></i> Aguarde...';
+                        document.getElementById("senha").setAttribute("disabled", "disabled");
+                    } else {
+
+                        if (this.readyState == 4 && this.status == 200) {
+                            obj = JSON.parse(this.responseText);
+                            if (obj.items[0].MSG == 'OK') {
+                                //alert('Matricula->'+ obj.items[0].MATRICULA);
+
+                                setCookie("ccwMatricula", obj.items[0].MATRICULA, 30);
+                                setCookie("ccwUsuario", usr, 30);
+                                setCookie("ccwSenha", pwd, 30);
+                                setCookie("ccwServidor", url+":"+porta, 30);
+                                setCookie("ccwNome", nome, 30);
+
+                                setCookie("ccwIdEmpresa", idempresa, 30);
+                                setCookie("ccwEmpresa", empresa, 30);
+                                setCookie("ccwEmail", email, 30);
+                                setCookie("ccwSupervisor", supervisor, 30);
+                                setCookie("ccwWS2", ws2, 30);
+                            
+                                window.location.href = "/files/index.html";
+
+                            } else {
+                                alert(obj.items[0].MSG);
+                                //document.getElementById("divLoad").setAttribute("class","login-form display-hide");
+                                document.getElementById("btnVerSenha").removeAttribute("disabled");
+                                document.getElementById("btnVerSenha").innerHTML = 'Acessar';
+                                document.getElementById("btnVerEmail").removeAttribute("disabled");
+                                document.getElementById("btnVerEmail").innerHTML = 'PrÃ³ximo';
+                                document.getElementById("email").removeAttribute("disabled");
+                                document.getElementById("senha").removeAttribute("disabled");
+                                //document.getElementById("divEmail").setAttribute("class","login-form display-show");
+                                //document.getElementById("divSenha").setAttribute("class","login-form display-hide");
+                                document.getElementById("email").focus();
+                                document.getElementById("email").select();
+                            }
+                        } else {
+                            alert('Falha ao autenticar usuario no servidor: '+url+':'+porta+'. Certifique-se de que o servidor na empresa esteja ligado e com acesso a internet...');
+                            //document.getElementById("divLoad").setAttribute("class","login-form display-hide");
+                            document.getElementById("btnVerSenha").removeAttribute("disabled");
+                            document.getElementById("btnVerSenha").innerHTML = 'Acessar';
+                            document.getElementById("btnVerEmail").removeAttribute("disabled");
+                            document.getElementById("btnVerEmail").innerHTML = 'PrÃ³ximo';
+                            document.getElementById("email").removeAttribute("disabled");
+                            document.getElementById("senha").removeAttribute("disabled");
+                            document.getElementById("divEmail").setAttribute("class","login-form display-hide");
+                            document.getElementById("divSenha").setAttribute("class","login-form display-show");
+                            document.getElementById("senha").focus();
+                            document.getElementById("senha").select();
+                        }
+                    }
+                };
+                var sql = "begin validar_senha_email('"+email+"', '"+senha+"', :p_cursor); end;";
+                //console.log(url+":"+porta+"/sql?usuario="+usr+"&senha="+pwd+"&sql="+sql);
+                //xhttp.open("GET.html", url+":"+porta+"/sql?usuario="+usr+"&senha="+pwd+"&sql="+sql, true);
+				xhttp.open("GET.html", "/sql?usuario="+usr+"&senha="+pwd+"&sql="+sql, true);
+				
+                xhttp.send();
+
+            }
+
+            function setCookie(ccwCookie,ccwCookieValor,exdays) {
+                var d = new Date();
+                d.setTime(d.getTime() + (exdays*24*60*60*12)); // Expirar 4 horas
+                var expires = "expires=" + d.toGMTString();
+                document.cookie = ccwCookie + "=" + ccwCookieValor + ";" + expires + ";path=/";
+            }
+
+
+        </script>
+
+    </body>
+
+</html>
